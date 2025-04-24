@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* === Custom Typewriter Cursor Styling === */
+.typewriter-cursor {
+    color: #f4ff56; /* Tailwind's purple-400 */
+    animation: blink 1s step-end infinite;
+  }
+  
+  .typewriter-cursor.typing {
+    animation: none; /* Prevent blinking while typing */
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
