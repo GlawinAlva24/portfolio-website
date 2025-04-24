@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // Images
 import arrow from "./Arrow.png";
-import me from "./Me.png";
+import me from "./me.png";
 import rocket from "./3dicons-rocket-dynamic-color.png";
 import trophy from "./3dicons-trophy-dynamic-color.png";
 import chart from "./3dicons-chart-iso-color.png";
