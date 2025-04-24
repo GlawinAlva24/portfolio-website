@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Link } from "react-scroll";
 
 // Images
 import arrow from "./Arrow.png";
@@ -115,248 +115,241 @@ export default function Portfolio() {
 
   return (
     <div className="text-white font-comic overflow-x-hidden">
-       {/* Navigation */}
-            <nav className="flex justify-between items-center p-6 bg-[#1c0a33] bg-opacity-90 fixed top-0 left-0 w-full z-50 backdrop-blur-md">
-              <div className="text-2xl font-bold">Glawin Alva</div>
-              <div className="space-x-6">
-                <a href="#home" className="hover:underline">Home</a>
-                <a href="#projects" className="hover:underline">Projects</a>
-                <a href="#resume" className="hover:underline">Resume</a>
-                <a href="#contact" className="hover:underline">Contact</a>
-              </div>
-            </nav>
-      
+      {/* Navigation */}
+      <nav className="flex justify-between items-center p-6 bg-[#1c0a33] bg-opacity-90 fixed top-0 left-0 w-full z-50 backdrop-blur-md">
+        <div className="text-2xl font-bold">Glawin Alva</div>
+        <div className="space-x-6">
+          <Link to="home" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Home</Link>
+          <Link to="journey" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Journey</Link>
+          <Link to="skills" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Skills</Link>
+          <Link to="projects" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Projects</Link>
+          <Link to="contact" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Contact</Link>
+          <a href="/Glawin_Data_Engineer_CV.pdf" download className="cursor-pointer hover:underline">Resume</a>
+        </div>
+      </nav>
+
             {/* Hero Section */}
-                <section id="home" className="pt-40 pb-24 bg-[#0b0b1f] px-6">
-  <div className="flex flex-col md:flex-row items-center justify-center text-left">
-    {/* Left: Profile Image */}
-    <div className="relative mb-10 md:mb-0 md:mr-20">
-      <div className="rounded-full w-fit mx-auto transition-all duration-300 hover:shadow-[0_0_40px_15px_rgba(168,85,247,0.6)]">
-        <img src={me} alt="me" className="w-42 md:w-65 rounded-full" />
-      </div>
-      <p className="absolute -top-6 left-[225px] text-sm md:text-base text-white font-semibold whitespace-nowrap">
-        Hii I am <span className="text-purple-400">Glawin</span>
-      </p>
-      <img src={arrow} alt="arrow" className="absolute -top-7 left-[129px] w-34 rotate-[-380deg]" />
-    </div>
+            <section id="home" className="pt-40 pb-24 bg-[#0b0b1f] px-6">
+        <div className="flex flex-col md:flex-row items-center justify-center text-left">
+          {/* Left: Profile Image */}
+          <div className="relative mb-10 md:mb-0 md:mr-20">
+            <div className="rounded-full w-fit mx-auto transition-all duration-300 hover:shadow-[0_0_40px_15px_rgba(168,85,247,0.6)]">
+              <img src={me} alt="me" className="w-42 md:w-65 rounded-full" />
+            </div>
+            <p className="absolute -top-6 left-[225px] text-sm md:text-base text-white font-semibold whitespace-nowrap">
+              Hii I am <span className="text-purple-400">Glawin</span>
+            </p>
+            <img src={arrow} alt="arrow" className="absolute -top-7 left-[129px] w-34 rotate-[-380deg]" />
+          </div>
 
-    {/* Right: Intro Text */}
-    <div className="text-center md:text-left max-w-xl relative">
-      <p className="text-lg font-semibold mb-2 text-purple-300">An AI & Data Enthusiast who</p>
-      <h1 className="text-3xl md:text-4xl font-extrabold leading-tight relative z-10">
-        Transforms ‘What is this mess?’ into <span className="text-purple-400">'Wow, that insight!'</span>
-      </h1>
-      <p className="mt-1 text-base md:text-lg text-[#dddddd]">ETL is my love language.</p>
+          {/* Right: Intro Text */}
+          <div className="text-center md:text-left max-w-xl relative">
+            <p className="text-lg font-semibold mb-2 text-purple-300">An AI & Data Enthusiast who</p>
+            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight relative z-10">
+              Transforms ‘What is this mess?’ into <span className="text-purple-400">'Wow, that insight!'</span>
+            </h1>
+            <p className="mt-1 text-base md:text-lg text-[#dddddd]">ETL is my love language.</p>
 
-      {/* Social Media Icons */}
-      <div className="mt-4 flex justify-center md:justify-start gap-6">
-  <a href="https://www.linkedin.com/in/glawin-alva-88a93b212/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
-    <img src={linkedinSocialIcon} alt="LinkedIn" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
-  </a>
-  <a href="https://github.com/GlawinAlva24" target="_blank" rel="noopener noreferrer">
-    <img src={githubSocialIcon} alt="GitHub" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
-  </a>
-  <a href="https://x.com/GlawinAlva" target="_blank" rel="noopener noreferrer">
-    <img src={xIcon} alt="Twitter/X" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
-  </a>
-  <a href="https://www.instagram.com/just_glawin/" target="_blank" rel="noopener noreferrer">
-    <img src={instagramIcon} alt="Instagram" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
-  </a>
-</div>
-
+            {/* Social Media Icons */}
+            <div className="mt-4 flex justify-center md:justify-start gap-6">
+              <a href="https://www.linkedin.com/in/glawin-alva-88a93b212/" target="_blank" rel="noopener noreferrer">
+                <img src={linkedinSocialIcon} alt="LinkedIn" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
+              </a>
+              <a href="https://github.com/GlawinAlva24" target="_blank" rel="noopener noreferrer">
+                <img src={githubSocialIcon} alt="GitHub" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
+              </a>
+              <a href="https://x.com/GlawinAlva" target="_blank" rel="noopener noreferrer">
+                <img src={xIcon} alt="Twitter/X" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
+              </a>
+              <a href="https://www.instagram.com/just_glawin/" target="_blank" rel="noopener noreferrer">
+                <img src={instagramIcon} alt="Instagram" className="w-6 h-6 hover:scale-150 transition-transform duration-300" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+           {/* About Section */}
+<section id="about" className="px-6 pt-8 pb-60 bg-[#0b0b1f] w-full flex justify-center">
+  <div className="max-w-4xl text-left">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+      I'm a <span className="text-purple-400">
+        <Typewriter
+          words={[
+            "Software Engineer💻.",
+            "Data & AI Specialist.",
+            "Machine Learning Engineer.",
+            "Master's Graduate in AI & Business Strategy🎓.",
+            "Meme-powered Debugger.",
+            "Certified Coffee Coder☕.",
+          ]}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={80}
+          deleteSpeed={50}
+          delaySpeed={2000}
+          cursorClassName="typewriter-cursor"
+        />
+      </span>
+    </h2>
+    <p className="text-base md:text-lg text-[#cccccc] leading-relaxed">
+      A data-driven problem solver passionate about creating intelligent, scalable systems.
+      With a solid foundation in AI, data engineering, and business strategy, I bring a unique blend of technical and analytical thinking.
+      Whether it’s building pipelines, cleaning messy data, or enabling machine learning workflows, I thrive at the intersection of logic, automation, and insight.
+      Currently on a mission to conquer the ☁️ cloud — learning AWS.
+    </p>
+    <div className="mt-12 flex justify-center">
+      <a
+        href="/Glawin_Data_Engineer_CV.pdf"
+        download
+        className="inline-block px-6 py-3 font-semibold rounded-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 text-white shadow-md"
+      >
+        Download Resume
+      </a>
     </div>
   </div>
 </section>
+      
+          {/* Journey Section */}
+<section id="journey" className="px-6 pt-16 pb-24 bg-[#0b0b1f] relative">
+  <div className="relative -mt-5 mb-16 flex justify-center" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1500">
+    <h2 className="text-3xl font-bold text-center text-white z-10">Life's Conquests So Far</h2>
+    <img
+      src={ellipse}
+      alt="ellipse"
+      className="absolute -top-6 w-[420px] h-[80px] z-0 opacity-50"
+      data-aos="fade-in"
+      data-aos-delay="300"
+      data-aos-duration="1500"
+    />
+  </div>
 
-      
-            {/* About Section */}
-            <section className="px-6 pt-8 pb-60 bg-[#0b0b1f] w-full flex justify-center">
-              <div className="max-w-4xl text-left">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-                  I'm a <span className="text-purple-400">
-                    <Typewriter
-                      words={["Software Engineer💻.", "Data & AI Specialist.", "Machine Learning Engineer.", "Master's Graduate in AI & Business Strategy🎓.", "Meme-powered Debugger.", "Certified Coffee Coder☕."]}
-                      loop={0}
-                      cursor
-                      cursorStyle="|"
-                      typeSpeed={80}
-                      deleteSpeed={50}
-                      delaySpeed={2000}
-                      cursorClassName="typewriter-cursor"
-                    />
-                  </span>
-                </h2>
-                <p className="text-base md:text-lg text-[#cccccc] leading-relaxed">
-                  A data-driven problem solver passionate about creating intelligent, scalable systems.
-                  With a solid foundation in AI, data engineering, and business strategy, I bring a unique blend of technical and analytical thinking.
-                  Whether it’s building pipelines, cleaning messy data, or enabling machine learning workflows, I thrive at the intersection of logic, automation, and insight.
-                  Currently on a mission to conquer the ☁️ cloud — learning AWS.
-                </p>
-                <div className="mt-12 flex justify-center">
-                <a
-                  href="/Glawin_Data_Engineer_CV.pdf"
-                  download
-                  className="inline-block px-6 py-3 font-semibold rounded-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 text-white shadow-md"
-                >
-                  Download Resume
-                </a>
-              </div>
+  {/* Floating Icons */}
+  <img src={rocket} alt="rocket" className="absolute right-[10rem] top-[6%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={trophy} alt="trophy" className="absolute left-[10rem] top-[23%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={chart} alt="chart" className="absolute right-[10rem] top-[38%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={gradcap} alt="graduation hat" className="absolute left-[11rem] top-[53%] w-[20rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={cloud} alt="cloud" className="absolute right-[10rem] top-[72%] w-[20rem] z-10 object-contain" data-aos="fade-up" />
 
-              </div>
-            </section>
-
-      
-            {/* Timeline Section */}
-            <div id="projects" className="px-6 pt-16 pb-24 bg-[#0b0b1f] relative">
-            <div className="relative -mt-5 mb-16 flex justify-center" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1500">
-        <h2 className="text-3xl font-bold text-center text-white z-10">Life's Conquests So Far</h2>
-        <img
-          src={ellipse}
-          alt="ellipse"
-          className="absolute -top-6 w-[420px] h-[80px] z-0 opacity-50"
-          data-aos="fade-in"
-          data-aos-delay="300"
-          data-aos-duration="1500"
-        />
-      </div>
-      
-        <div className="absolute right-[10rem] top-[6%] transform -translate-y-[60%] z-10" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
-          <img src={rocket} alt="rocket" className="w-[18rem] h-[18rem] object-contain" />
-        </div>
-      
-        <div className="absolute left-[10rem] top-[23%] transform -translate-y-[50%] z-10" data-aos="fade-up">
-          <img src={trophy} alt="trophy" className="w-[18rem] h-[18rem] object-contain" />
-        </div>
-      
-        <div className="absolute right-[10rem] top-[38%] transform -translate-y-[50%] z-10" data-aos="fade-up">
-          <img src={chart} alt="chart" className="w-[18rem] h-[18rem] object-contain" />
-        </div>
-      
-        <div className="absolute left-[11rem] top-[53%] transform -translate-y-[50%] z-10" data-aos="fade-up">
-          <img src={gradcap} alt="graduation hat" className="w-[20rem] h-[20rem] object-contain" />
-        </div>
-      
-        <div className="absolute right-[10rem] top-[72%] transform -translate-y-[50%] z-10" data-aos="fade-up">
-          <img src={cloud} alt="cloud" className="w-[20rem] h-[20rem] object-contain" />
-        </div>
-      
-        <div className="relative z-10">
-          {[
-            {
-              side: "left",
-              title: "My journey began with a BSc in Information Technology",
-              content: "This was where the story started. I dove into the world of computers, mastering the basics of Java, Python, and mathematical thinking. Each semester gave me confidence—and a taste of how tech could be used to build and solve."
-            },
-            {
-              side: "right",
-              title: "NIIT — National Institute of Information Technology",
-              content: "This was my builder’s bootcamp. With NIIT’s Cloud and Mobile Software Engineering program, I was introduced to full-stack development. Here, I began creating small apps from scratch, falling in love with making ideas real."
-            },
-            {
-              side: "left",
-              title: "Associate IT Role @ Tata AIG",
-              content: "In the corporate world, I discovered the power of data. I created ETL pipelines, built Power BI dashboards, and automated reporting systems. This was also when I first started noticing the rising wave of AI—and it intrigued me."
-            },
-            {
-              side: "right",
-              title: "Master’s in AI & Business Strategy (Distinction)",
-              content: "I moved to the UK to level up. At Aston University, I blended AI development with business thinking—working on ML models, cloud projects, and business impact. It wasn’t just about tech anymore—it was about using it smartly."
-            },
-            {
-              side: "left",
-              title: "Currently pursuing AWS certification",
-              content: "The journey continues in the clouds. I'm learning AWS to make sure the solutions I build are scalable, efficient, and ready for the future. Lambda, buckets, and IAM policies are my tools of the trade now."
-            }
-          ].map((entry, index) => (
-            <div key={index} className={`relative flex md:items-center w-full mb-24 ${entry.side === 'left' ? 'justify-start' : 'justify-end'}`} data-aos={entry.side === 'left' ? 'fade-right' : 'fade-left'}>
-      <div className="absolute left-1/2 top-1/2 w-4 h-4 bg-purple-400 rounded-full z-10 transform -translate-x-1/2 -translate-y-1/2"></div>
-              <div className={`w-full md:w-1/2 flex ${entry.side === 'left' ? 'justify-end pr-8' : 'justify-start pl-8'}`}>
-                <div className="bg-[#1c0a33] border border-purple-500 p-6 rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(168,85,247,0.4)]">
-                  <h3 className="text-white text-lg font-bold">{entry.title}</h3>
-                  <p className="text-white text-sm mt-2">{entry.content}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-[70px] bottom-[60px] w-1 bg-purple-400 z-0"></div>
-        </div>
-      </div>
-      
-       {/* Skills / Tech Stack Section */}
-       <section id="skills" className="px-6 pt-20 pb-24 bg-[#0b0b1f] relative z-10">
-              <div className="relative mb-12 text-center" data-aos="fade-in">
-                <p className="text-lg text-[#ccc] uppercase tracking-widest mb-2">
-                  I constantly try to improve
-                </p>
-                <h2 className="text-4xl font-bold text-white">My Tech Stack</h2>
-              </div>
-      
-              <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
-        {techStack.map((tech, index) => (
-          <div
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
-            data-aos-duration="600"
-            className="group flex items-center gap-2 px-4 py-2 rounded-full bg-[#1f1f2e] transition duration-300 transform hover:rotate-[-3deg] hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(168,85,247,0.4)]"
-          >
-            <img
-              src={tech.img}
-              alt={tech.name}
-              className="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-150"
-            />
-            <span className="text-white text-sm font-medium transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent">
-              {tech.name}
-            </span>
+  {/* Timeline Entries */}
+  <div className="relative z-10">
+    {[
+      {
+        side: "left",
+        title: "My journey began with a BSc in Information Technology",
+        content: "Dove into the world of computers, mastering Java, Python, and the math behind it all. It sparked the beginning."
+      },
+      {
+        side: "right",
+        title: "NIIT — National Institute of Information Technology",
+        content: "Learned full-stack dev and mobile apps. This is where ideas turned into actual, usable software."
+      },
+      {
+        side: "left",
+        title: "Associate IT Role @ Tata AIG",
+        content: "ETL pipelines, Power BI dashboards, automation, and data. This is where I fell in love with impact."
+      },
+      {
+        side: "right",
+        title: "Master’s in AI & Business Strategy",
+        content: "Blending machine learning with cloud and business sense at Aston University, UK. The next level."
+      },
+      {
+        side: "left",
+        title: "Currently pursuing AWS certification",
+        content: "Mastering scalable systems in the cloud — S3, Lambda, IAM, and beyond."
+      }
+    ].map((entry, index) => (
+      <div key={index} className={`relative flex md:items-center w-full mb-24 ${entry.side === 'left' ? 'justify-start' : 'justify-end'}`} data-aos={entry.side === 'left' ? 'fade-right' : 'fade-left'}>
+        <div className="absolute left-1/2 top-1/2 w-4 h-4 bg-purple-400 rounded-full z-10 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className={`w-full md:w-1/2 flex ${entry.side === 'left' ? 'justify-end pr-8' : 'justify-start pl-8'}`}>
+          <div className="bg-[#1c0a33] border border-purple-500 p-6 rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(168,85,247,0.4)]">
+            <h3 className="text-white text-lg font-bold">{entry.title}</h3>
+            <p className="text-white text-sm mt-2">{entry.content}</p>
           </div>
-        ))}
+        </div>
       </div>
-            </section>
-            {/* Projects Section */}
-      <section id="projects" className="px-6 pt-20 pb-24 bg-[#0b0b1f] text-white">
-        <div className="text-center mb-12" data-aos="fade-in">
-          <h2 className="text-4xl font-bold">Projects</h2>
-          <p className="text-lg text-gray-400 mt-2">Some things I've built recently</p>
-        </div>
-      
-        <div className="grid gap-10 max-w-6xl mx-auto">
-          {[
-            {
-              title: "Energy Consumption Forecasting & Anomaly Detection",
-              description: "Developed a hybrid LSTM-SWT model for forecasting and anomaly detection using Isolation Forest, Autoencoders, LOF, and One-Class SVM.",
-              link: "https://github.com/GlawinAlva24/Energy-Consumption-Forecasting-Anomaly-Detection"
-            },
-            {
-              title: "Big Data for UK Road Safety Risk Prediction",
-              description: "Built predictive models using big data to assess road safety risks and enable insurance premium adjustments.",
-              link: "https://github.com/GlawinAlva24/Big-Data-Road-Safety-Risk-Prediction"
-            },
-            {
-              title: "UK E-Commerce Customer Segmentation and Fraud Detection",
-              description: "Performed segmentation using K-Means clustering and built ensemble ML models to optimize fraud detection.",
-              link: "https://github.com/GlawinAlva24/UK-E-Commerce-Customer-Segmentation-Fraud-Detection-and-ML-Applications"
-            }
-          ].map((project, index) => (
-            <div
-              key={index}
-              className="bg-[#1c0a33] border border-purple-500 p-8 rounded-xl shadow-md hover:shadow-[0_0_30px_10px_rgba(168,85,247,0.4)] transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 200}
-            >
-              <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-              <p className="text-gray-300 mb-6">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition"
-              >
-                View Project
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
+    ))}
+    <div className="absolute left-1/2 transform -translate-x-1/2 top-[70px] bottom-[60px] w-1 bg-purple-400 z-0"></div>
+  </div>
+</section>
+{/* Skills / Tech Stack Section */}
+<section id="skills" className="px-6 pt-20 pb-24 bg-[#0b0b1f] relative z-10">
+  <div className="relative mb-12 text-center" data-aos="fade-in">
+    <p className="text-lg text-[#ccc] uppercase tracking-widest mb-2">
+      I constantly try to improve
+    </p>
+    <h2 className="text-4xl font-bold text-white">My Tech Stack</h2>
+  </div>
+
+  <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+    {techStack.map((tech, index) => (
+      <div
+        key={index}
+        data-aos="fade-up"
+        data-aos-delay={index * 100}
+        data-aos-duration="600"
+        className="group flex items-center gap-2 px-4 py-2 rounded-full bg-[#1f1f2e] transition duration-300 transform hover:rotate-[-3deg] hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(168,85,247,0.4)]"
+      >
+        <img
+          src={tech.img}
+          alt={tech.name}
+          className="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-150"
+        />
+        <span className="text-white text-sm font-medium transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent">
+          {tech.name}
+        </span>
+      </div>
+    ))}
+  </div>
+</section>
+{/* Projects Section */}
+<section id="projects" className="px-6 pt-20 pb-24 bg-[#0b0b1f] text-white">
+  <div className="text-center mb-12" data-aos="fade-in">
+    <h2 className="text-4xl font-bold">Projects</h2>
+    <p className="text-lg text-gray-400 mt-2">Some things I've built recently</p>
+  </div>
+
+  <div className="grid gap-10 max-w-6xl mx-auto">
+    {[
+      {
+        title: "Energy Consumption Forecasting & Anomaly Detection",
+        description: "Developed a hybrid LSTM-SWT model for forecasting and anomaly detection using Isolation Forest, Autoencoders, LOF, and One-Class SVM.",
+        link: "https://github.com/GlawinAlva24/Energy-Consumption-Forecasting-Anomaly-Detection"
+      },
+      {
+        title: "Big Data for UK Road Safety Risk Prediction",
+        description: "Built predictive models using big data to assess road safety risks and enable insurance premium adjustments.",
+        link: "https://github.com/GlawinAlva24/Big-Data-Road-Safety-Risk-Prediction"
+      },
+      {
+        title: "UK E-Commerce Customer Segmentation and Fraud Detection",
+        description: "Performed segmentation using K-Means clustering and built ensemble ML models to optimize fraud detection.",
+        link: "https://github.com/GlawinAlva24/UK-E-Commerce-Customer-Segmentation-Fraud-Detection-and-ML-Applications"
+      }
+    ].map((project, index) => (
+      <div
+        key={index}
+        className="bg-[#1c0a33] border border-purple-500 p-8 rounded-xl shadow-md hover:shadow-[0_0_30px_10px_rgba(168,85,247,0.4)] transition-all duration-300"
+        data-aos="fade-up"
+        data-aos-delay={index * 200}
+      >
+        <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+        <p className="text-gray-300 mb-6">{project.description}</p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition"
+        >
+          View Project
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
 {/* Contact Section */}
 <section id="contact" className="bg-[#0b0b1f] px-6 py-20">
   <div className="max-w-3xl mx-auto text-center" data-aos="fade-in">
@@ -364,60 +357,82 @@ export default function Portfolio() {
     <p className="text-[#ccc] text-lg mb-10">
       If you're looking for a developer who combines technical depth with a commitment to excellence, let's connect!
     </p>
+
+    {/* Social Reach Buttons */}
     <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16">
-  <span className="text-white font-semibold">Reach Out:</span>
-
-  <a
-  href="mailto:glawin24@gmail.com"
-  className="px-6 py-2 border rounded-md font-bold text-white border-transparent hover:scale-105 transition-all duration-300 group"
-  style={{ borderImage: "linear-gradient(to right, #FDE68A, #8B5CF6) 1", borderImageSlice: 1 }}
->
-    <span className="group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-      EMAIL
-    </span>
-  </a>
-
-  <a
-  href="https://www.linkedin.com/in/glawin-alva-88a93b212/?originalSubdomain=in"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-6 py-2 border rounded-md font-bold text-white border-transparent hover:scale-105 transition-all duration-300 group"
-  style={{ borderImage: "linear-gradient(to right, #6EE7B7, #9333EA) 1", borderImageSlice: 1 }}
->
-    <span className="group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-      LINKEDIN
-    </span>
-  </a>
-</div>
-  </div>
-
-  <form onSubmit={sendEmail}
-      className="max-w-2xl mx-auto bg-[#1c0a33] p-8 rounded-xl shadow-lg border border-purple-500"
-      data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-    <div>
-      <label className="block text-white mb-2 font-semibold">Name</label>
-      <input type="text" name="name" placeholder="Your name" required
-             className="w-full px-4 py-3 rounded-md bg-[#2d2d44] text-white focus:outline-none focus:ring-2 focus:ring-purple-400" />
-    </div>
-    <div>
-      <label className="block text-white mb-2 font-semibold">Email</label>
-      <input type="email" name="email" placeholder="you@example.com" required
-             className="w-full px-4 py-3 rounded-md bg-[#2d2d44] text-white focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      <span className="text-white font-semibold">Reach Out:</span>
+      <a
+        href="mailto:glawin24@gmail.com"
+        className="px-6 py-2 border rounded-md font-bold text-white hover:scale-105 transition-all duration-300 group"
+        style={{ borderImage: "linear-gradient(to right, #FDE68A, #8B5CF6) 1", borderImageSlice: 1 }}
+      >
+        <span className="group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+          EMAIL
+        </span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/glawin-alva-88a93b212/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-6 py-2 border rounded-md font-bold text-white hover:scale-105 transition-all duration-300 group"
+        style={{ borderImage: "linear-gradient(to right, #6EE7B7, #9333EA) 1", borderImageSlice: 1 }}
+      >
+        <span className="group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+          LINKEDIN
+        </span>
+      </a>
     </div>
   </div>
-  <div className="mb-6">
-    <label className="block text-white mb-2 font-semibold">Message</label>
-    <textarea name="message" rows="5" placeholder="Let's build something great..." required
-              className="w-full px-4 py-3 rounded-md bg-[#2d2d44] text-white focus:outline-none focus:ring-2 focus:ring-purple-400"></textarea>
-  </div>
-  <button type="submit"
-          className="w-full py-3 rounded-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-bold text-white">
-    SEND MESSAGE
-  </button>
-</form>
 
+  {/* Contact Form */}
+  <form
+    onSubmit={sendEmail}
+    className="max-w-2xl mx-auto bg-[#1c0a33] p-8 rounded-xl shadow-lg border border-purple-500"
+    data-aos="fade-up"
+    data-aos-delay="300"
+    data-aos-duration="1000"
+  >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label className="block text-white mb-2 font-semibold">Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          className="w-full px-4 py-3 rounded-md bg-[#2d2d44] text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
+        />
+      </div>
+      <div>
+        <label className="block text-white mb-2 font-semibold">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          className="w-full px-4 py-3 rounded-md bg-[#2d2d44] text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
+        />
+      </div>
+    </div>
+    <div className="mb-6">
+      <label className="block text-white mb-2 font-semibold">Message</label>
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Let's build something great..."
+        required
+        className="w-full px-4 py-3 rounded-md bg-[#2d2d44] text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      className="w-full py-3 rounded-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-bold text-white"
+    >
+      SEND MESSAGE
+    </button>
+  </form>
 
+  {/* Toastify Notifications */}
   <ToastContainer
     position="bottom-right"
     autoClose={4000}
@@ -431,6 +446,7 @@ export default function Portfolio() {
     theme="dark"
   />
 </section>
+
     </div>
   );
 }
