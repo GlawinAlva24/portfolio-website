@@ -201,7 +201,7 @@ export default function Portfolio() {
     </p>
     <div className="mt-12 flex justify-center">
       <a
-        href="/Glawin_Data_Engineer_CV.pdf"
+        href="/Glawin_CV.pdf"
         download
         className="inline-block px-6 py-3 font-semibold rounded-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 text-white shadow-md"
       >
