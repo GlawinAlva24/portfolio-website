@@ -102,7 +102,12 @@ export default function Portfolio() {
       message: formData.get("message"),
     };
   
-    emailjs.send("service_yo5v0sk", "template_khus2hi", templateParams, "bqnwJXI2sGC4DdIkn")
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+
       .then(() => {
         toast.success("Message sent successfully! 🚀");
         e.target.reset();
@@ -137,18 +142,20 @@ export default function Portfolio() {
               <img src={me} alt="me" className="w-42 md:w-65 rounded-full" />
             </div>
             <p className="absolute -top-6 left-[225px] text-sm md:text-base text-white font-semibold whitespace-nowrap">
-              Hii I am <span className="text-purple-400">Glawin</span>
+              Hi, I’m Glawin<span className="text-purple-400">Glawin</span>
             </p>
             <img src={arrow} alt="arrow" className="absolute -top-7 left-[129px] w-34 rotate-[-380deg]" />
           </div>
 
           {/* Right: Intro Text */}
           <div className="text-center md:text-left max-w-xl relative">
-            <p className="text-lg font-semibold mb-2 text-purple-300">An AI & Data Enthusiast who</p>
-            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight relative z-10">
-              Transforms ‘What is this mess?’ into <span className="text-purple-400">'Wow, that insight!'</span>
-            </h1>
-            <p className="mt-1 text-base md:text-lg text-[#dddddd]">ETL is my love language.</p>
+             <p className="text-lg font-semibold mb-2 text-purple-300">
+               Data Engineer working across AI and analytics </p>
+               <h1 className="text-3xl md:text-4xl font-extrabold leading-tight relative z-10">
+                Turning messy data into <span className="text-purple-400">something useful.</span></h1>
+                <p className="mt-2 text-base md:text-lg text-[#dddddd]">
+                  I focus on ETL, data pipelines, and cloud analytics using Python, SQL and AWS.</p>
+
 
             {/* Social Media Icons */}
             <div className="mt-4 flex justify-center md:justify-start gap-6">
@@ -176,12 +183,14 @@ export default function Portfolio() {
       I'm a <span className="text-purple-400">
         <Typewriter
           words={[
-            "Software Engineer💻.",
-            "Data & AI Specialist.",
-            "Machine Learning Engineer.",
+            "Data Engineer.",
+            "AWS Certified Data Engineer.",
+            "Data & Analytics Specialist.",
+            "Machine Learning Enthusiast.",
             "Master's Graduate in AI & Business Strategy🎓.",
             "Meme-powered Debugger.",
             "Certified Coffee Coder☕.",
+             "Occasional over-thinker of data models.",
           ]}
           loop={0}
           cursor
@@ -194,18 +203,20 @@ export default function Portfolio() {
       </span>
     </h2>
     <p className="text-base md:text-lg text-[#cccccc] leading-relaxed">
-      A data-driven problem solver passionate about creating intelligent, scalable systems.
-      With a solid foundation in AI, data engineering, and business strategy, I bring a unique blend of technical and analytical thinking.
-      Whether it’s building pipelines, cleaning messy data, or enabling machine learning workflows, I thrive at the intersection of logic, automation, and insight.
-      Currently on a mission to conquer the ☁️ cloud — learning AWS.
-    </p>
+      I’m an AWS Certified Data Engineer with a Master’s in AI and Business Strategy (Distinction).
+      I enjoy building reliable data pipelines, cleaning up messy datasets, and making sure
+      reporting is clear and dependable for the people who rely on it.
+      <br />
+      I’ve worked with Python, SQL and AWS services, and I’m comfortable moving between
+      technical work and practical business needs. I tend to focus on keeping things simple, maintainable, and well thought through.</p>
+
     <div className="mt-12 flex justify-center">
       <a
         href="/Glawin_CV.pdf"
         download
         className="inline-block px-6 py-3 font-semibold rounded-md bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 text-white shadow-md"
       >
-        Download Resume
+        Download CV
       </a>
     </div>
   </div>
@@ -315,17 +326,17 @@ export default function Portfolio() {
     {[
       {
         title: "Energy Consumption Forecasting & Anomaly Detection",
-        description: "Developed a hybrid LSTM-SWT model for forecasting and anomaly detection using Isolation Forest, Autoencoders, LOF, and One-Class SVM.",
+        description: "Built an end-to-end pipeline to process and analyse energy consumption data. Implemented forecasting and anomaly detection models to identify unusual usage patterns, supporting better monitoring and decision-making.",
         link: "https://github.com/GlawinAlva24/Energy-Consumption-Forecasting-Anomaly-Detection"
       },
       {
         title: "Big Data for UK Road Safety Risk Prediction",
-        description: "Built predictive models using big data to assess road safety risks and enable insurance premium adjustments.",
+        description: "Developed data pipelines and predictive models to assess road safety risks using large-scale UK datasets. The project focuses on identifying high-risk patterns to support data-driven insurance and safety analysis.",
         link: "https://github.com/GlawinAlva24/Big-Data-Road-Safety-Risk-Prediction"
       },
       {
         title: "UK E-Commerce Customer Segmentation and Fraud Detection",
-        description: "Performed segmentation using K-Means clustering and built ensemble ML models to optimize fraud detection.",
+        description: "Analysed UK e-commerce data to segment customers and detect fraudulent behaviour. Applied clustering and machine learning models to improve customer understanding and support more reliable fraud detection.",
         link: "https://github.com/GlawinAlva24/UK-E-Commerce-Customer-Segmentation-Fraud-Detection-and-ML-Applications"
       }
     ].map((project, index) => (
@@ -353,14 +364,14 @@ export default function Portfolio() {
 {/* Contact Section */}
 <section id="contact" className="bg-[#0b0b1f] px-6 py-20">
   <div className="max-w-3xl mx-auto text-center" data-aos="fade-in">
-    <h2 className="text-4xl font-bold text-white mb-4">Let's Build Together</h2>
+    <h2 className="text-4xl font-bold text-white mb-4">Get in touch</h2>
     <p className="text-[#ccc] text-lg mb-10">
-      If you're looking for a developer who combines technical depth with a commitment to excellence, let's connect!
+      If you’d like to chat about data engineering, projects, or roles, feel free to get in touch.
     </p>
 
     {/* Social Reach Buttons */}
     <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16">
-      <span className="text-white font-semibold">Reach Out:</span>
+      <span className="text-white font-semibold">Have a chat:</span>
       <a
         href="mailto:glawin24@gmail.com"
         className="px-6 py-2 border rounded-md font-bold text-white hover:scale-105 transition-all duration-300 group"
