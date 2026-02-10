@@ -49,6 +49,7 @@ import githubSocialIcon from './icons8-github-50.png';
 import instagramIcon from './icons8-instagram-50.png';
 import linkedinSocialIcon from './icons8-linked-in-50.png';
 import xIcon from './icons8-x-50.png';
+import awsDataEngineerBadge from "./aws-data-engineer-badge.png";
 
 
 
@@ -125,6 +126,7 @@ export default function Portfolio() {
         <div className="text-2xl font-bold">Glawin Alva</div>
         <div className="space-x-6">
           <Link to="home" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Home</Link>
+          <Link to="certifications" smooth offset={-70} duration={500} className="cursor-pointer hover:underline"> Certifications</Link>
           <Link to="journey" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Journey</Link>
           <Link to="skills" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Skills</Link>
           <Link to="projects" smooth offset={-70} duration={500} className="cursor-pointer hover:underline">Projects</Link>
@@ -142,7 +144,7 @@ export default function Portfolio() {
               <img src={me} alt="me" className="w-42 md:w-65 rounded-full" />
             </div>
             <p className="absolute -top-6 left-[225px] text-sm md:text-base text-white font-semibold whitespace-nowrap">
-              Hi, I’m Glawin<span className="text-purple-400">Glawin</span>
+              Hi, I’m <span className="text-purple-400">Glawin</span>
             </p>
             <img src={arrow} alt="arrow" className="absolute -top-7 left-[129px] w-34 rotate-[-380deg]" />
           </div>
@@ -150,11 +152,12 @@ export default function Portfolio() {
           {/* Right: Intro Text */}
           <div className="text-center md:text-left max-w-xl relative">
              <p className="text-lg font-semibold mb-2 text-purple-300">
-               Data Engineer working across AI and analytics </p>
+               Data & AI Engineer • AWS Certified Data Engineer – Associate </p>
                <h1 className="text-3xl md:text-4xl font-extrabold leading-tight relative z-10">
-                Turning messy data into <span className="text-purple-400">something useful.</span></h1>
+                Building scalable data pipelines and<span className="text-purple-400"> ML-ready systems on AWS</span> 
+                </h1>
                 <p className="mt-2 text-base md:text-lg text-[#dddddd]">
-                  I focus on ETL, data pipelines, and cloud analytics using Python, SQL and AWS.</p>
+                  I design cloud-native data pipelines and enable machine learning workflows using Python, SQL, AWS, and modern analytics tools.</p>
 
 
             {/* Social Media Icons */}
@@ -177,7 +180,7 @@ export default function Portfolio() {
       </section>
       
            {/* About Section */}
-<section id="about" className="px-6 pt-8 pb-60 bg-[#0b0b1f] w-full flex justify-center">
+<section id="about" className="px-6 pt-8 pb-20 bg-[#0b0b1f] w-full flex justify-center">
   <div className="max-w-4xl text-left">
     <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
       I'm a <span className="text-purple-400">
@@ -221,10 +224,111 @@ export default function Portfolio() {
     </div>
   </div>
 </section>
+
+{/* Certifications Section */}
+<section
+  id="certifications"
+  className="px-6 pt-10 pb-20 bg-[#0b0b1f] w-full flex justify-center"
+>
+  <div className="max-w-6xl w-full">
+    <div className="text-center mb-14" data-aos="fade-in">
+      <h2 className="text-4xl font-bold text-white">Certifications</h2>
+      <p className="text-lg text-[#ccc] mt-3">
+        Credentials that validate my data engineering and cloud skills
+      </p>
+    </div>
+
+    {/* AWS (Primary Card) */}
+    <a
+      href="https://www.credly.com/badges/29009b62-bb14-4341-a09a-5652f6cf077f/public_url"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col md:flex-row items-center gap-10 bg-[#12122a]
+                 border border-purple-500 rounded-2xl p-8 md:p-10
+                 shadow-lg hover:shadow-[0_0_40px_12px_rgba(168,85,247,0.35)]
+                 transition-all duration-300 cursor-pointer"
+      data-aos="fade-up"
+    >
+      {/* Left: Badge */}
+      <div className="flex-shrink-0">
+        <img
+          src={awsDataEngineerBadge}
+          alt="AWS Certified Data Engineer – Associate"
+          className="w-48 md:w-56 object-contain scale-150
+                     transition-transform duration-300
+                     drop-shadow-[0_0_30px_rgba(96,165,250,0.6)]"
+        />
+      </div>
+
+      {/* Right: Content */}
+      <div className="text-left max-w-2xl">
+        <h3 className="text-3xl font-bold text-white mb-2">
+          AWS Certified Data Engineer – Associate
+        </h3>
+
+        <p className="text-sm text-[#9ad7ff] mb-4">
+          Issued by{" "}
+          <span className="underline underline-offset-4">
+            Amazon Web Services Training and Certification
+          </span>
+        </p>
+
+        <p className="text-[#ddd] leading-relaxed">
+          Demonstrates knowledge of designing scalable data pipelines on AWS,
+          including ingestion, transformation, orchestration, monitoring,
+          cost optimisation, security, governance, and schema design
+          to support analytics workloads.
+        </p>
+
+        <p className="mt-4 text-sm text-purple-300 italic">
+          Click to verify certification ↗
+        </p>
+      </div>
+    </a>
+
+    {/* NIIT (Secondary Card) */}
+    <div className="mt-10" />
+
+    <a
+      href="https://drive.google.com/file/d/1x7OdUfqry91oCtE14xPcoesMpPFV8K64/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-[#101026] border border-[#2d2d44] rounded-xl p-6
+                 shadow-md hover:shadow-[0_0_20px_6px_rgba(168,85,247,0.2)]
+                 transition-all duration-300 max-w-6xl mx-auto cursor-pointer"
+      data-aos="fade-up"
+    >
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h3 className="text-xl font-semibold text-white">
+            NIIT – Cloud and Mobile Software Engineering
+          </h3>
+
+          <p className="text-sm text-purple-300 mt-1">
+            Professional Training • 2022
+          </p>
+
+          <p className="text-[#ccc] mt-3 leading-relaxed">
+            Completed structured training in cloud fundamentals and software engineering practices,
+            strengthening my foundation for scalable systems and modern application development.
+          </p>
+
+          <p className="mt-3 text-sm text-purple-300 italic">
+            Click to view certificate ↗
+          </p>
+        </div>
+
+        <span className="text-sm font-semibold text-green-400 bg-[#1a1a2e] px-4 py-2 rounded-full">
+          Performance: Excellent
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
       
           {/* Journey Section */}
-<section id="journey" className="px-6 pt-16 pb-24 bg-[#0b0b1f] relative">
-  <div className="relative -mt-5 mb-16 flex justify-center" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1500">
+<section id="journey" className="px-6 pt-28 pb-24 bg-[#0b0b1f] relative">
+  <div className="relative mt-6 mb-20 flex justify-center" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1500">
     <h2 className="text-3xl font-bold text-center text-white z-10">Life's Conquests So Far</h2>
     <img
       src={ellipse}
@@ -268,9 +372,11 @@ export default function Portfolio() {
       },
       {
         side: "left",
-        title: "Currently pursuing AWS certification",
-        content: "Mastering scalable systems in the cloud — S3, Lambda, IAM, and beyond."
-      }
+        title: "AWS Certified Data Engineer – Associate",
+        content:
+            "Successfully earned the AWS Certified Data Engineer – Associate credential, validating hands-on skills in building scalable data pipelines, cloud storage, IAM, and analytics-ready systems on AWS."
+          }
+
     ].map((entry, index) => (
       <div key={index} className={`relative flex md:items-center w-full mb-24 ${entry.side === 'left' ? 'justify-start' : 'justify-end'}`} data-aos={entry.side === 'left' ? 'fade-right' : 'fade-left'}>
         <div className="absolute left-1/2 top-1/2 w-4 h-4 bg-purple-400 rounded-full z-10 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -336,7 +442,7 @@ export default function Portfolio() {
       },
       {
         title: "UK E-Commerce Customer Segmentation and Fraud Detection",
-        description: "Analysed UK e-commerce data to segment customers and detect fraudulent behaviour. Applied clustering and machine learning models to improve customer understanding and support more reliable fraud detection.",
+        description: "Analysed UK e-commerce data to segment customers and detect fraudulent behaviour. Applied clustering and machine learning models to improve customer understanding and support more reliable fraud detection.`",
         link: "https://github.com/GlawinAlva24/UK-E-Commerce-Customer-Segmentation-Fraud-Detection-and-ML-Applications"
       }
     ].map((project, index) => (
