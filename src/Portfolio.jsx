@@ -341,9 +341,9 @@ export default function Portfolio() {
   </div>
 
   {/* Floating Icons */}
-  <img src={rocket} alt="rocket" className="absolute right-[10rem] top-[6%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
-  <img src={trophy} alt="trophy" className="absolute left-[10rem] top-[23%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
-  <img src={chart} alt="chart" className="absolute right-[10rem] top-[38%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={rocket} alt="rocket" className="absolute right-[10rem] top-[12%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={trophy} alt="trophy" className="absolute left-[10rem] top-[26%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
+  <img src={chart} alt="chart" className="absolute right-[10rem] top-[40%] w-[18rem] z-10 object-contain" data-aos="fade-up" />
   <img src={gradcap} alt="graduation hat" className="absolute left-[11rem] top-[53%] w-[20rem] z-10 object-contain" data-aos="fade-up" />
   <img src={cloud} alt="cloud" className="absolute right-[10rem] top-[72%] w-[20rem] z-10 object-contain" data-aos="fade-up" />
 
